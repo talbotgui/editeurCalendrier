@@ -1,0 +1,13 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<label [class]="jsonChargeDepuisFichierLocal ? 'inputFile inputFileDone' : 'inputFile'">
+			<input (change)="onSelectFichierLocal($event)" type="file" />
+		</label>
+	</div>
+
+	<div class="row">
+		<button class="button" (click)="onDemandeAnnulation()">Annuler</button>
+		<button class="button" (click)="onDemandeChargement()">Charger</button>
+	</div>
+</div>

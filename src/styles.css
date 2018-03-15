@@ -1,0 +1,72 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* global */
+body { background-color:lightgray; font:12px/18px Arial,sans-serif; }
+textarea { font-family: Roboto,"Helvetica Neue",sans-serif; }
+.rappelSauvegarde { color: red; }
+.sauvegardeDejaFaite { color: green; }
+
+/* formulaire */
+.button {
+	border: 1px solid #79b7e7; border-radius: 5px; 
+	font-weight: bold; color: #1d5987; padding: 5px 20px; 
+}
+label { margin: 0px 10px 0px 20px; }
+.mat-select { width: 300px; }
+.mat-select-trigger { font-size: 13px; }
+.mat-input-element { text-align: center; }
+.mat-option { line-height: 30px; height: 30px; }
+.mat-input-infix { padding: 0!important; }
+
+/* Dialog */
+.mat-dialog-container { padding: 0px 24px 24px 24px!important; }
+.mat-dialog-container h2 { margin: 10px 0px; font-size: 1.5em; }
+
+/* grille */
+.mat-card-header-text { width: 100%!important; }
+.mat-grid-tile .mat-figure { align-items: start!important; }
+
+/* tableaux de l'application */
+table { width: 100%; }
+th { height: 35px; font-size: 14; background-color: #CFD8DC; background-image: linear-gradient(to bottom,#f5f5f5,#CFD8DC) }
+td { font-size: 12; padding: 5px 0px; }
+
+/** Refonte des fieldset avec bootstrap */
+/*
+<div class="container-fluid">
+  <div class="row odd titre-row"></div>
+	<div class="row odd">
+	</div>
+</div>
+*/
+.row.even, .form-row.even { background-color: lightgrey ; padding-bottom: 5px; }
+.row.odd, .form-row.odd { background-color: lightblue ; padding-bottom: 5px; }
+.row button, .form-row button { margin-top: 10px; }
+.row.titre-row { font-size: 22px; margin-top: 10px; }
+.col input { width: 100%; margin: 5px 0px; min-width: 150px; }
+.col textarea { width: 100%; margin: 5px 0px; min-width: 150px; }
+.col mat-select { width: 100%; margin: 5px 0px; min-width: 150px; min-height: 25px; }
+
+/* validation */
+.alert-danger {background-color: red; color: white; font-size: 15px; line-height: 25px; padding: 5px; margin-right: 10px; }
+.mat-select.ng-dirty:not(.filtre) .mat-select-value { color: blue; }
+input.ng-dirty:not(.filtre) { color: blue; }
+textarea.ng-dirty { color: blue; }
+.ng-valid[required], .ng-valid.required  { border-left: 5px solid #42A948; }
+.ng-invalid:not(form)  { border-left: 5px solid #a94442; }
+
+/* Snackbar */
+snack-bar-container.erreur { background-color: red; }
+snack-bar-container.avertissement { background-color: orange; }
+
+/* Ck Editor */
+.cke_top { background-color: #CFD8DC; background-image: linear-gradient(to bottom,#f5f5f5,#CFD8DC) }
+.cke_botton { padding: 0px 8px 0px; }
+
+/* Chips */
+.mat-chip.mat-accent { font-size: 14px!important; font-weight: bolder; background-color: red; }
+.mat-chip-list-stacked .mat-chip-list-wrapper .mat-chip:not(.mat-basic-chip) { font-size: 10px; }
+.mat-chip.mat-primary { background-color: #E2DBD5; }
+
+/* Petit boutons */
+.fa { cursor: pointer; margin: 5px 0px; font-size: 16px!important; }

@@ -1,0 +1,2 @@
+<em class="fa fa-folder-open" matTooltip="Charger des données" *ngIf="!fichierCharge" (click)="ouvreDialogChargement()"></em>
+<em class="fa fa-save" *ngIf="!!fichierCharge" (click)="sauvegardeLesDonnees()" matTooltipPosition="below" matTooltip="Sauvegarder les données par téléchargement"></em>

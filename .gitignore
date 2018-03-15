@@ -1,0 +1,25 @@
+# misc & compiled output
+/build/*
+/dist/*
+.scannerwork
+package-lock.json
+debug.log
+
+# dependencies
+/node/
+/node_modules
+
+# IDEs and editors
+.project
+.classpath
+*.launch
+.settings/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# e2e
+/e2e/*.js
+/e2e/*.map

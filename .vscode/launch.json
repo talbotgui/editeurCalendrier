@@ -1,0 +1,68 @@
+// @see https://github.com/weinand/vscode-recipes/tree/master/Angular-CLI#debug-end-to-end-tests
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome with ng serve",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200/#",
+      "webRoot": "${workspaceRoot}"
+    },
+    {
+      "name": "Launch Chrome with ng test",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:9876/debug.html",
+      "webRoot": "${workspaceRoot}"
+    },
+    {
+      "name": "e2e all",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      "protocol": "inspector",
+      "args": ["${workspaceRoot}/protractor.conf.js"]
+    },
+    {
+      "name": "e2e accueil",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      "protocol": "inspector",
+      "args": ["${workspaceRoot}/protractor.conf.js", "--suite", "accueil"]
+    },
+    {
+      "name": "e2e competences",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      "protocol": "inspector",
+      "args": ["${workspaceRoot}/protractor.conf.js", "--suite", "competences"]
+    },
+    {
+      "name": "e2e eleve",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      "protocol": "inspector",
+      "args": ["${workspaceRoot}/protractor.conf.js", "--suite", "eleve"]
+    },
+    {
+      "name": "e2e journal",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      "protocol": "inspector",
+      "args": ["${workspaceRoot}/protractor.conf.js", "--suite", "journal"]
+    },
+    {
+      "name": "e2e taches",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      "protocol": "inspector",
+      "args": ["${workspaceRoot}/protractor.conf.js", "--suite", "taches"]
+    }
+  ]
+}

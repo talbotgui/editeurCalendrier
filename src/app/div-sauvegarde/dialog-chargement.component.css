@@ -1,0 +1,3 @@
+label.inputFile { width: 89px; height: 30px; margin-top: 10px; display: block; overflow: hidden; cursor: pointer; background: #d0e5f5 url("../../assets/images/inputFile.png"); }
+label.inputFileDone { background-position-y: 30px; }
+label.inputFile input { position: relative; height: 100%; width: auto; opacity: 0; -moz-opacity: 0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }

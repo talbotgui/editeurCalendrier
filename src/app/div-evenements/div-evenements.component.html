@@ -1,0 +1,41 @@
+<!-- Liste  -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-2">Début</div>
+		<div class="col-2">end_date</div>
+		<div class="col-2">Type</div>
+		<div class="col-2">Texte</div>
+		<div class="col-2">
+			<span>Détails</span>
+			<em class="fa fa-plus" matTooltip="Ajouter un évènement" (click)="ajouter()"></em>
+		</div>
+	</div>
+	<div class="row" *ngFor="let evenement of evenements; let j = index" (click)="editer(evenement);">
+		<div class="col-2">
+			<span *ngIf="evenement != evenementSelectionne">{{evenement.start_date}}</span>
+			<input *ngIf="evenement == evenementSelectionne" matInput [(ngModel)]="evenement.start_date" />
+		</div>
+		<div class="col-2">
+			<span *ngIf="evenement != evenementSelectionne">{{evenement.end_date}}</span>
+			<input *ngIf="evenement == evenementSelectionne" matInput [(ngModel)]="evenement.end_date" />
+		</div>
+		<div class="col-2">
+			<span *ngIf="evenement != evenementSelectionne">{{evenement.type}}</span>
+			<mat-select *ngIf="evenement == evenementSelectionne" [(ngModel)]="evenement.type">
+				<mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+			</mat-select>
+		</div>
+		<div class="col-2">
+			<span *ngIf="evenement != evenementSelectionne">{{evenement.text}}</span>
+			<input *ngIf="evenement == evenementSelectionne" matInput [(ngModel)]="evenement.text" />
+		</div>
+		<div class="col-2">
+			<span *ngIf="evenement != evenementSelectionne">{{evenement.details}}</span>
+			<input *ngIf="evenement == evenementSelectionne" matInput [(ngModel)]="evenement.details" />
+
+			<!-- Actions -->
+			<em *ngIf="evenement != evenementSelectionne" class="fa fa-copy" matTooltip="Editer l'évènement" (click)="editer(evenement)"></em>
+			<em class="fa fa-remove" matTooltip="Supprimer l'évènement" (click)="supprimer(evenement)"></em>
+		</div>
+	</div>
+</div>

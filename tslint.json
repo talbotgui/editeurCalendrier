@@ -1,0 +1,15 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"quotemark": [true,"single"],
+		"max-line-length": [true,160],
+		"trailing-comma": [true,{"multiline": "never","singleline": "never"}],
+		"member-access": false,
+		"object-literal-sort-keys": false,
+		"one-line": [true,"check-catch","check-finally","check-open-brace","check-whitespace"],
+		"max-classes-per-file": [false],
+		"ordered-imports": [false],
+		"only-arrow-functions": [true,"allow-named-functions"],
+		"align": [true, "arguments", "statements", "elements", "members"]
+	}
+}

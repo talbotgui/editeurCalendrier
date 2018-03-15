@@ -1,0 +1,17 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-7">
+			<span class="titre d-none d-sm-block">Application d'édition de calendrier</span>
+		</div>
+		<div class="col-5">
+			<div-sauvegarde></div-sauvegarde>
+		</div>
+	</div>
+
+	<br/>
+	<br/>
+	<div class="row" *ngIf="donneesChargees">
+		<div-evenements></div-evenements>
+	</div>
+
+</div>
