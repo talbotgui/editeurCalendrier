@@ -5,5 +5,5 @@ export class Fichier {
 }
 
 export class Evenement {
-	type: string; start_date: Date; end_date: Date; text: string; details: Date;
+	type: string; start_date: Date; end_date: Date; text: string; details: string;
 }

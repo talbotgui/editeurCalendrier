@@ -7,9 +7,15 @@ import * as model from '../model/model';
 @Component({ selector: 'div-evenements', templateUrl: './div-evenements.component.html', styleUrls: ['./div-evenements.component.css'] })
 export class DivEvenementsComponent {
 
+  filtre: model.Evenement = new model.Evenement();
+
   // Liste à afficher
   get evenements(): model.Evenement[] {
-    return this.dataRepository.getFichierCharge().data;
+    return this.dataRepository.getFichierCharge().data.filter(
+      eve => (!this.filtre.type || this.filtre.type == eve.type)
+        && (!this.filtre.text || !eve.text || eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1)
+        && (!this.filtre.details || !eve.details || eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1)
+    );
   }
 
   // Element en cours d'édition
