@@ -1,5 +1,262 @@
-[
-	{ "debut":"18/03/2018 11:00:00", "fin":"18/03/2018 13:00:00", "nom":"evt 1", "details":"det1", "type":"messe", "lieu":"Rome" },
-	{ "debut":"18/03/2018 12:00:00", "fin":"19/03/2018 11:00:00", "nom":"evt 2", "details":"det2", "type":"chapelet", "lieu":"Paris" },
-	{ "debut":"20/03/2018 11:00:00", "fin":"20/03/2018 14:00:00", "nom":"evt 3", "details":"det3", "type":"saint", "lieu":"Ham" }
-]
+{
+	"Commentaires":[
+		"Pour creer un evenement couvrant toute une journee (comme noel), mettre start_date=24/12/2014"
+		,""
+	]
+	,"data":[
+	 
+		
+		{"type":"maj",			"start_date":"21/03/2018"}	
+		
+		,{"type":"reunion",	"start_date":"05/05/2018 09:00:00", "end_date":"05/05/2018 11:00:00", "text":"Pélerinage de Lourdes", "details":"Inscriptions"}	
+		
+		,{"type":"messe",  	"start_date":"02/04/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"09/04/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"16/04/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"23/04/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"30/04/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"07/05/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"14/05/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"21/05/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"28/05/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"04/06/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"11/06/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"18/06/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"25/06/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"08/04/2018 11:00:00", "text":"à Ham", "details":"messe des familles"}
+		,{"type":"messe",	"start_date":"15/04/2018 11:00:00", "text":"à Ham"}	
+		,{"type":"messe",	"start_date":"08/04/2018 10:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"14/04/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"01/04/2018 10:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"07/04/2018 18:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"15/04/2018 10:30:00", "text":"à Monchy-Lagache"}		
+		,{"type":"messe",	"start_date":"03/04/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"10/04/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"17/04/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"24/04/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"01/04/2018 11:00:00", "text":"à Esmery-Hallon"}	
+		,{"type":"messe",	"start_date":"08/04/2018 09:30:00", "text":"à Brouchy"}	
+		,{"type":"messe",	"start_date":"15/04/2018 09:30:00", "text":"à Villers-St-Christophe"}	
+		,{"type":"priere",	"start_date":"06/04/2018 16:45:00", "end_date":"06/04/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"06/04/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"13/04/2018 16:45:00", "end_date":"13/04/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"13/04/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"20/04/2018 16:45:00", "end_date":"20/04/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"20/04/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"27/04/2018 16:45:00", "end_date":"27/04/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"27/04/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"reunion",	"start_date":"07/04/2018 09:00:00", "end_date":"07/04/2018 11:00:00", "text":"Pélerinage de Lourdes", "details":"Inscriptions"}		
+		,{"type":"reunion",	"start_date":"14/04/2018 09:00:00", "end_date":"14/04/2018 11:00:00", "text":"Pélerinage de Lourdes", "details":"Inscriptions"}	
+		,{"type":"reunion",	"start_date":"21/04/2018 09:00:00", "end_date":"21/04/2018 11:00:00", "text":"Pélerinage de Lourdes", "details":"Inscriptions"}	
+		,{"type":"reunion",	"start_date":"28/04/2018 09:00:00", "end_date":"28/04/2018 11:00:00", "text":"Pélerinage de Lourdes", "details":"Inscriptions"}	
+		,{"type":"reunion",	"start_date":"08/04/2018 15:00:00", "text":"Théatre en Picard", "details":"spectacle à la salle des fêtes d'Athies"}	
+		
+		,{"type":"messe",  	"start_date":"01/03/2018 15:00:00", "text":"à Ercheu","details":"à la maison de retraite"}
+		,{"type":"messe",  	"start_date":"22/03/2018 15:00:00", "text":"à Ercheu","details":"à la maison de retraite"}
+		,{"type":"messe",  	"start_date":"15/03/2018 10:00:00", "text":"à Ham","details":"à la maison de retraite"}
+		,{"type":"priere",	"start_date":"05/03/2018 17:30:00", "text":"Chapelet à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"12/03/2018 17:30:00", "text":"Chapelet à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"19/03/2018 17:30:00", "text":"Chapelet à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"26/03/2018 17:30:00", "text":"Chapelet à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"01/03/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"05/03/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"07/03/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"08/03/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"10/03/2018 09:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"12/03/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"14/03/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"19/03/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"21/03/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"23/03/2018 09:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"26/03/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"28/03/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"04/03/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"11/03/2018 11:00:00", "text":"à Ham", "details":"messe des familles"}
+		,{"type":"messe",	"start_date":"18/03/2018 11:00:00", "text":"à Eppeville", "details":"Sacrement des malades"}
+		,{"type":"messe",	"start_date":"23/03/2018 18:30:00", "text":"à Eppeville", "details":"Célébration Pénitentielle"}
+		,{"type":"messe",	"start_date":"25/03/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"31/03/2018 20:30:00", "text":"à Ham", "details":"Veillée Pascale"}
+		,{"type":"messe",	"start_date":"03/03/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"11/03/2018 09:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"17/03/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"25/03/2018 10:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"30/03/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"31/03/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"04/03/2018 10:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"10/03/2018 18:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"18/03/2018 10:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"24/03/2018 18:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"29/03/2018 18:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"06/03/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"13/03/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"20/03/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"27/03/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"08/03/2018 18:00:00", "text":"à Brouchy"}	
+		,{"type":"messe",	"start_date":"22/03/2018 18:00:00", "text":"à Brouchy"}	
+		,{"type":"messe",	"start_date":"04/03/2018 09:30:00", "text":"à Offoy"}		
+		,{"type":"messe",	"start_date":"11/03/2018 09:30:00", "text":"à Moyencourt"}	
+		,{"type":"messe",	"start_date":"18/03/2018 09:30:00", "text":"à Douilly"}
+		,{"type":"messe",	"start_date":"25/03/2018 09:30:00", "text":"à Sancourt"}	
+		,{"type":"messe",	"start_date":"30/03/2018 19:00:00", "text":"à Hombleux"}
+		,{"type":"reunion",	"start_date":"11/03/2018 09:00:00", "end_date":"11/03/2018 17:00:00", "text":"Recollection de secteur", "details":"à la salle paroissiale de Nesle"}		
+		,{"type":"priere",	"start_date":"02/03/2018 16:45:00", "end_date":"02/03/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"02/03/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"09/03/2018 16:45:00", "end_date":"09/03/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"09/03/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"16/03/2018 16:45:00", "end_date":"16/03/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"16/03/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"23/03/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}	
+		,{"type":"priere",	"start_date":"30/03/2018 16:45:00", "end_date":"30/03/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"30/03/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"reunion",	"start_date":"24/03/2018 19:30:00", "text":"Soirée de Carême", "details":"à Nesle animée par les scouts"}		
+		
+		
+		,{"type":"messe",  	"start_date":"05/02/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"07/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"12/02/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"14/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"19/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"20/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"21/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"23/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"26/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"27/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"28/02/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"04/02/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"11/02/2018 11:00:00", "text":"à Ham", "details":"messe des familles"}
+		,{"type":"messe",	"start_date":"14/02/2018 19:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"18/02/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"25/02/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"11/02/2018 10:30:00", "text":"à Nesle"}	
+		,{"type":"messe",	"start_date":"03/02/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"25/02/2018 10:30:00", "text":"à Nesle"}	
+		,{"type":"messe",	"start_date":"17/02/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"04/02/2018 10:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"10/02/2018 18:30:00", "text":"à Monchy-Lagache"}	
+		,{"type":"messe",	"start_date":"14/02/2018 18:30:00", "text":"à Monchy-Lagache"}	
+		,{"type":"messe",	"start_date":"18/02/2018 10:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"24/02/2018 18:30:00", "text":"à Monchy-Lagache"}	
+		,{"type":"messe",	"start_date":"04/02/2018 09:30:00", "text":"à Hombleux"}	
+		,{"type":"messe",	"start_date":"06/02/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"13/02/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"20/02/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"27/02/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",  	"start_date":"22/02/2018 15:00:00", "text":"à Ercheu","details":"à la maison de retraite"}
+		,{"type":"priere",	"start_date":"02/02/2018 16:45:00", "end_date":"02/02/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"02/02/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"09/02/2018 16:45:00", "end_date":"09/02/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"09/02/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"16/02/2018 16:45:00", "end_date":"16/02/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"16/02/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"23/02/2018 16:45:00", "end_date":"23/02/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"23/02/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		
+		
+		,{"type":"messe",  	"start_date":"08/01/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"10/01/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"15/01/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"17/01/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"22/01/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"24/01/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",  	"start_date":"29/01/2018 17:30:00", "text":"à Ham","details":"à la chapelle du presbytère"}		
+		,{"type":"messe",  	"start_date":"31/01/2018 18:00:00", "text":"à Ham","details":"à la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"07/01/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"14/01/2018 11:00:00", "text":"à Ham", "details":"messe des familles"}
+		,{"type":"messe",	"start_date":"21/01/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"28/01/2018 11:00:00", "text":"à Ham"}
+		,{"type":"messe",	"start_date":"01/01/2018 10:30:00", "text":"à Nesle"}	
+		,{"type":"messe",	"start_date":"06/01/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"14/01/2018 10:30:00", "text":"à Nesle"}	
+		,{"type":"messe",	"start_date":"20/01/2018 18:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"28/01/2018 10:30:00", "text":"à Nesle"}
+		,{"type":"messe",	"start_date":"07/01/2018 10:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"13/01/2018 18:30:00", "text":"à Monchy-Lagache"}	
+		,{"type":"messe",	"start_date":"21/01/2018 10:30:00", "text":"à Monchy-Lagache"}
+		,{"type":"messe",	"start_date":"27/01/2018 18:30:00", "text":"à Monchy-Lagache"}	
+		,{"type":"messe",	"start_date":"09/01/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"16/01/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"23/01/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"30/01/2018 18:00:00", "text":"à Hombleux"}
+		,{"type":"messe",	"start_date":"07/01/2018 09:30:00", "text":"à Brouchy"}	
+		,{"type":"messe",	"start_date":"14/01/2018 09:30:00", "text":"à Villers-St-Christophe"}
+		,{"type":"messe",	"start_date":"18/01/2018 18:00:00", "text":"à Brouchy"}	
+		,{"type":"messe",	"start_date":"21/01/2018 09:30:00", "text":"à Ercheu"}
+		,{"type":"messe",	"start_date":"28/01/2018 09:30:00", "text":"à Aubigny-aux-Kaisnes"}	
+		,{"type":"priere",	"start_date":"05/01/2018 16:45:00", "end_date":"05/01/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"05/01/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"12/01/2018 16:45:00", "end_date":"12/01/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"12/01/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"19/01/2018 16:45:00", "end_date":"19/01/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"19/01/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",	"start_date":"26/01/2018 16:45:00", "end_date":"26/01/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",	"start_date":"26/01/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		,{"type":"priere",		"start_date":"04/05/2018 16:45:00", "end_date":"04/05/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"04/05/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",		"start_date":"11/05/2018 16:45:00", "end_date":"11/05/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"11/05/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",		"start_date":"18/05/2018 16:45:00", "end_date":"18/05/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"18/05/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",		"start_date":"25/05/2018 16:45:00", "end_date":"25/05/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"25/05/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		
+		,{"type":"priere",		"start_date":"01/06/2018 16:45:00", "end_date":"01/06/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"01/06/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",		"start_date":"08/06/2018 16:45:00", "end_date":"08/06/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"08/06/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",		"start_date":"15/06/2018 16:45:00", "end_date":"1/06/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"15/06/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",		"start_date":"22/06/2018 16:45:00", "end_date":"22/06/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"22/06/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}
+		,{"type":"priere",		"start_date":"29/06/2018 16:45:00", "end_date":"29/06/2018 17:45:00", "text":"à Ham", "details":"Exposition du St Sacrement dans la chapelle du presbytère"}
+		,{"type":"messe",		"start_date":"29/06/2018 18:00:00", "text":"à Ham", "details":"à la chapelle du presbytère"}	
+		
+		,{"type":"reunion",		"start_date":"14/01/2018 11:00:00", "text":"Eveil à la foi", "details":"dans la sacristie, pendant la messe des familles"}
+		,{"type":"reunion",		"start_date":"08/04/2018 11:00:00", "text":"Eveil à la foi", "details":"dans la sacristie, pendant la messe des familles"}
+		,{"type":"reunion",		"start_date":"13/05/2018 11:00:00", "text":"Eveil à la foi", "details":"dans la sacristie, pendant la messe des familles"}
+		
+		,{"type":"priere",		"start_date":"14/01/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"24/01/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"11/02/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"11/03/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"21/03/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"08/04/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"18/04/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"13/05/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"23/05/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		,{"type":"priere",		"start_date":"10/06/2018 00:00:00", "text":"Catèchèse", "details":"détails dans -Enfants et jeunes-"}
+		
+		,{"type":"priere",		"start_date":"14/01/2018 11:00:00", "text":"préparation à la Première des Communions", "details":"pendant la messe"}
+		,{"type":"priere",		"start_date":"11/02/2018 11:00:00", "text":"préparation à la Première des Communions", "details":"pendant la messe"}
+		,{"type":"priere",		"start_date":"26/02/2018 11:00:00", "text":"préparation à la Première des Communions pour les jeunes du 29/03/18", "details":"pendant la messe"}
+		,{"type":"celeb",		"start_date":"29/03/2018 19:30:00", "text":"Première des Communions à Eppeville"}
+		,{"type":"celeb",		"start_date":"27/05/2018 11:00:00", "text":"Première des Communions à Ham"}
+		,{"type":"priere",		"start_date":"24/06/2018 00:00:00", "text":"Etape 6 de la Première des Communions"}
+		
+		,{"type":"priere",		"start_date":"10/02/2018 00:00:00", "text":"à Nesle, préparation à la Profession de foi"}
+		,{"type":"priere",		"start_date":"26/05/2018 00:00:00", "text":"à ND Moyenpont, préparation à la Profession de foi"}
+		,{"type":"celeb",		"start_date":"03/06/2018 11:00:00", "text":"Profession de foi à Eppeville"}
+		,{"type":"celeb",		"start_date":"17/06/2018 11:00:00", "text":"Profession de foi à Ham"}
+		
+		,{"type":"priere",		"start_date":"13/01/2018 13:30:00", "end_date":"13/01/2018 15:00:00", "text":"à Ham", "details":"Préparation à la Confirmation 2017-2018"}
+		,{"type":"priere",		"start_date":"10/02/2018 09:30:00", "end_date":"10/02/2018 17:00:00", "text":"à Doullens", "details":"Rencontre des Confirmands 2018"}
+		
+		,{"type":"priere",		"start_date":"18/01/2018 18:00:00", "text":"à Ham", "details":"Rencontres bibliques"}
+		,{"type":"priere",		"start_date":"01/02/2018 18:00:00", "text":"à Ham", "details":"Rencontres bibliques"}
+		,{"type":"priere",		"start_date":"15/02/2018 18:00:00", "text":"à Ham", "details":"Rencontres bibliques"}
+		
+		,{"type":"reunion",  	"start_date":"15/01/2018 17:00:00", "text":"Equipes Liturgiques","details":"au presbytère"}
+	
+	]
+}

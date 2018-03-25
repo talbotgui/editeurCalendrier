@@ -13,8 +13,10 @@ export class DivEvenementsComponent {
   get evenements(): model.Evenement[] {
     return this.dataRepository.getFichierCharge().data.filter(
       eve => (!this.filtre.type || this.filtre.type == eve.type)
-        && (!this.filtre.text || !eve.text || eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1)
-        && (!this.filtre.details || !eve.details || eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1)
+        && (!this.filtre.text || (eve.text && eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1))
+        && (!this.filtre.details || (eve.details && eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1))
+        && (!this.filtre.startDate || (eve.startDate && this.filtre.startDate < eve.startDate))
+        && (!this.filtre.endDate || (eve.endDate && this.filtre.endDate > eve.endDate))
     );
   }
 
@@ -23,7 +25,7 @@ export class DivEvenementsComponent {
 
   // Types disponibles
   get types(): string[] {
-    return ["messe", "priere"];
+    return ["", "messe", "priere", "reunion", "celeb"];
   }
 
   // Un constructeur pour se faire injecter les dépendances
@@ -44,6 +46,22 @@ export class DivEvenementsComponent {
       this.evenements.splice(index, 1);
     }
     this.evenementSelectionne = undefined;
+  }
+
+  changeDate(delta: number) {
+    if (this.filtre.startDate) {
+      const nouvelleDate = new Date();
+      nouvelleDate.setTime(this.filtre.startDate.getTime() + (delta * 1000 * 3600 * 24));
+      nouvelleDate.setHours(0, 0, 0, 0);
+      this.filtre.startDate = nouvelleDate;
+    }
+
+    if (this.filtre.endDate) {
+      const nouvelleDate = new Date();
+      nouvelleDate.setTime(this.filtre.endDate.getTime() + (delta * 1000 * 3600 * 24));
+      nouvelleDate.setHours(0, 0, 0, 0);
+      this.filtre.endDate = nouvelleDate;
+    }
   }
 
   private formatDate(date?: Date): string {

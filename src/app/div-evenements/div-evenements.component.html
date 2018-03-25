@@ -3,14 +3,6 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-3">
-			<input matInput [(ngModel)]="filtre.start_date" placeholder="Date de debut" />
-		</div>
-		<div class="col-3">
-			<input matInput [(ngModel)]="filtre.end_date" placeholder="Date de fin" />
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-3">
 			<input matInput [(ngModel)]="filtre.text" placeholder="Texte" />
 		</div>
 		<div class="col-3">
@@ -22,6 +14,23 @@
 			</mat-select>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-12">
+			<em class="fa fa-fast-backward" matTooltip="Reculer d'une semaine" (click)="changeDate(-7)"></em>
+			<em class="fa fa-backward" matTooltip="Reculer d'une journée" (click)="changeDate(-1)"></em>
+
+			<input [matDatepicker]="datepickerDebut" [(ngModel)]="filtre.startDate" name="dateDebut" placeholder="Date de debut">
+			<mat-datepicker-toggle [for]="datepickerDebut"></mat-datepicker-toggle>
+			<mat-datepicker #datepickerDebut></mat-datepicker>
+
+			<input [matDatepicker]="datepickerFin" [(ngModel)]="filtre.endDate" name="dateFin" placeholder="Date de fin">
+			<mat-datepicker-toggle [for]="datepickerFin"></mat-datepicker-toggle>
+			<mat-datepicker #datepickerFin></mat-datepicker>
+
+			<em class="fa fa-forward" matTooltip="Avancer d'une journée" (click)="changeDate(1)"></em>
+			<em class="fa fa-fast-forward" matTooltip="Avancer d'une semaine" (click)="changeDate(7)"></em>
+		</div>
+	</div>
 </div>
 
 <!-- Liste  -->
@@ -29,7 +38,7 @@
 	<thead>
 		<tr>
 			<th>Début</th>
-			<th>end_date</th>
+			<th>endDate</th>
 			<th>Type</th>
 			<th>Texte</th>
 			<th>Détails</th>
@@ -41,12 +50,12 @@
 	<tbody>
 		<tr *ngFor="let evenement of evenements; let j = index" (click)="editer(evenement);" [class]="j%2==0 ? 'even' : 'odd'">
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.start_date}}</span>
-				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenement.start_date" />
+				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.startDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
+				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenement.startDate" />
 			</td>
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.end_date}}</span>
-				<input *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" matInput [(ngModel)]="evenement.end_date" />
+				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.endDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
+				<input *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" matInput [(ngModel)]="evenement.endDate" />
 			</td>
 			<td>
 				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.type}}</span>
