@@ -83,12 +83,14 @@ export class DivEvenementsComponent {
     this.evenementAjoute = new model.Evenement();
     this.evenementAjoute.start_date = '//2018 :00:00';
     this.evenementAjoute.end_date = '//2018 :00:00';
+    this.evenementAjoute.modifie = true;
 
     this.evenementSelectionne = undefined;
   }
 
   editer(evenement: model.Evenement) {
     this.evenementSelectionne = evenement;
+    this.evenementSelectionne.modifie = true;
   }
 
   inserer(): void {

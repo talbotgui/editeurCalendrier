@@ -5,4 +5,5 @@ td { padding: 0px 5px; }
 tr.even { background-color: aliceblue; }
 tr.odd { background-color: bisque; }
 
-.filtres {margin-bottom: 30px;}
+.filtres { margin-bottom: 30px; }
+.fa-star{ color:red; }

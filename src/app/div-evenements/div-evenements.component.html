@@ -98,6 +98,8 @@
 				<em *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')" class="fa fa-copy" matTooltip="Editer l'évènement"
 				 (click)="editer(evenement)"></em>
 				<em *ngIf="evenement.type != 'maj'" class="fa fa-remove" matTooltip="Supprimer l'évènement" (click)="supprimer(evenement)"></em>
+
+				<em *ngIf="evenement.modifie == true" class="fa fa-star" matTooltip="L'évènement a été modifié/créé"></em>
 			</td>
 		</tr>
 	</tbody>
