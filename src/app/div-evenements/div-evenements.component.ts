@@ -12,21 +12,41 @@ export class DivEvenementsComponent {
 
   // Liste à afficher
   get evenements(): model.Evenement[] {
-    return this.dataRepository.getFichierCharge().data.filter(
-      eve => (!this.filtre.type || this.filtre.type == eve.type)
-        && (!this.filtre.text || (eve.text && eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1))
-        && (!this.filtre.details || (eve.details && eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1))
-        && (!this.filtre.startDate || (eve.startDate && this.filtre.startDate < eve.startDate))
-        && (!this.filtre.endDate || (eve.endDate && this.filtre.endDate > eve.endDate))
-    );
+    return this.dataRepository.getFichierCharge().data
+      .filter(
+        eve => (!this.filtre.type || this.filtre.type == eve.type)
+          && (!this.filtre.text || (eve.text && eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1))
+          && (!this.filtre.details || (eve.details && eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1))
+          && (!this.filtre.startDate || (eve.startDate && this.filtre.startDate < eve.startDate))
+          && (!this.filtre.endDate || (eve.endDate && this.filtre.endDate > eve.endDate))
+      )
+      .sort((a: model.Evenement, b: model.Evenement): number => {
+        let valeur = -1;
+        if (this.filtreChamp === 'debut' && a.startDate && b.startDate) {
+          valeur = a.startDate.getTime() - b.startDate.getTime();
+        } else if (this.filtreChamp === 'type' && a.type && b.type) {
+          valeur = a.type.localeCompare(b.type);
+        } else if (this.filtreChamp === 'texte' && a.text && b.text) {
+          valeur = a.text.localeCompare(b.text);
+        } else if (this.filtreChamp === 'details' && a.details && b.details) {
+          valeur = a.details.localeCompare(b.details);
+        }
+        if (this.filtreOrdre) {
+          valeur *= -1;
+        }
+        return valeur;
+      });
   }
 
   // Element ajouté
   evenementAjoute: model.Evenement | undefined;
 
-
   // Element en cours d'édition
   evenementSelectionne: model.Evenement | undefined;
+
+  // Tri
+  filtreChamp: string | undefined;
+  filtreOrdre: boolean = false;
 
   get evenementSelectionneStartDate(): string {
     if (this.evenementSelectionne) {
@@ -110,6 +130,14 @@ export class DivEvenementsComponent {
     }
   }
 
+  trier(valeur: string): void {
+    if (this.filtreChamp === valeur) {
+      this.filtreOrdre = !this.filtreOrdre;
+    } else {
+      this.filtreOrdre = true;
+    }
+    this.filtreChamp = valeur;
+  }
 
   private parseDate(chaine: string): Date | undefined {
     if (!chaine || chaine == '') {

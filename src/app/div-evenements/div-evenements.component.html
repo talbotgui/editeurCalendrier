@@ -37,12 +37,28 @@
 <table>
 	<thead>
 		<tr>
-			<th>Début</th>
-			<th>endDate</th>
-			<th>Type</th>
-			<th>Texte</th>
-			<th>Détails</th>
-			<th>
+			<th class="date" (click)="trier('debut')">
+				<span>Début</span>
+				<em class="fa fa-arrow-up" *ngIf="(filtreChamp == 'debut') && filtreOrdre"></em>
+				<em class="fa fa-arrow-down" *ngIf="(filtreChamp == 'debut') && !filtreOrdre"></em>
+			</th>
+			<th class="date">Fin</th>
+			<th (click)="trier('type')">
+				<span>Type</span>
+				<em class="fa fa-arrow-up" *ngIf="filtreChamp=='type' && filtreOrdre"></em>
+				<em class="fa fa-arrow-down" *ngIf="filtreChamp=='type' && !filtreOrdre"></em>
+			</th>
+			<th (click)="trier('texte')">
+				<span>Texte</span>
+				<em class="fa fa-arrow-up" *ngIf="filtreChamp=='texte' && filtreOrdre"></em>
+				<em class="fa fa-arrow-down" *ngIf="filtreChamp=='texte' && !filtreOrdre"></em>
+			</th>
+			<th (click)="trier('details')">
+				<span>Détails</span>
+				<em class="fa fa-arrow-up" *ngIf="filtreChamp=='details' && filtreOrdre"></em>
+				<em class="fa fa-arrow-down" *ngIf="filtreChamp=='details' && !filtreOrdre"></em>
+			</th>
+			<th class="actions">
 				<em class="fa fa-plus" matTooltip="Ajouter un évènement" (click)="creer()"></em>
 			</th>
 		</tr>
