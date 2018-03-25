@@ -51,11 +51,12 @@
 		<tr *ngFor="let evenement of evenements; let j = index" (click)="editer(evenement);" [class]="j%2==0 ? 'even' : 'odd'">
 			<td>
 				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.startDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
-				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenement.startDate" />
+				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenementSelectionneStartDate" />
 			</td>
 			<td>
 				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.endDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
-				<input *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" matInput [(ngModel)]="evenement.endDate" />
+				<input *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" matInput [(ngModel)]="evenementSelectionneEndDate"
+				/>
 			</td>
 			<td>
 				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.type}}</span>
@@ -74,7 +75,7 @@
 			<td>
 				<em *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')" class="fa fa-copy" matTooltip="Editer l'évènement"
 				 (click)="editer(evenement)"></em>
-				<em class="fa fa-remove" matTooltip="Supprimer l'évènement" (click)="supprimer(evenement)"></em>
+				<em *ngIf="evenement.type != 'maj'" class="fa fa-remove" matTooltip="Supprimer l'évènement" (click)="supprimer(evenement)"></em>
 			</td>
 		</tr>
 	</tbody>

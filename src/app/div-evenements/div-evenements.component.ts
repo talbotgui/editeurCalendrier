@@ -23,6 +23,33 @@ export class DivEvenementsComponent {
   // Element en cours d'édition
   evenementSelectionne: model.Evenement | undefined;
 
+  get evenementSelectionneStartDate(): string {
+    if (this.evenementSelectionne) {
+      return this.evenementSelectionne.start_date;
+    } else {
+      return '';
+    }
+  }
+  get evenementSelectionneEndDate(): string {
+    if (this.evenementSelectionne) {
+      return this.evenementSelectionne.end_date;
+    } else {
+      return '';
+    }
+  }
+  set evenementSelectionneStartDate(value: string) {
+    if (this.evenementSelectionne) {
+      this.evenementSelectionne.start_date = value;
+      this.evenementSelectionne.startDate = this.parseDate(value);
+    }
+  }
+  set evenementSelectionneEndDate(value: string) {
+    if (this.evenementSelectionne) {
+      this.evenementSelectionne.end_date = value;
+      this.evenementSelectionne.endDate = this.parseDate(value);
+    }
+  }
+
   // Types disponibles
   get types(): string[] {
     return ["", "messe", "priere", "reunion", "celeb"];
@@ -62,6 +89,25 @@ export class DivEvenementsComponent {
       nouvelleDate.setHours(0, 0, 0, 0);
       this.filtre.endDate = nouvelleDate;
     }
+  }
+
+  private parseDate(chaine: string): Date | undefined {
+    if (!chaine || chaine == '') {
+      return undefined;
+    }
+
+    const str = chaine.split('/');
+    const str2 = str[2].split(' ');
+    const date = new Date(Number(str2[0]), Number(str[1]) - 1, Number(str[0]));
+
+    if (str2.length != 2) {
+      date.setHours(0, 0, 0, 0);
+    } else {
+      const str3 = str2[1].split(':');
+      date.setHours(Number(str3[0]), Number(str3[1]), 0, 0);
+    }
+
+    return date;
   }
 
   private formatDate(date?: Date): string {
