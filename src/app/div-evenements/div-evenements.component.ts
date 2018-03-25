@@ -7,6 +7,7 @@ import * as model from '../model/model';
 @Component({ selector: 'div-evenements', templateUrl: './div-evenements.component.html', styleUrls: ['./div-evenements.component.css'] })
 export class DivEvenementsComponent {
 
+  // Champs de filtrage
   filtre: model.Evenement = new model.Evenement();
 
   // Liste à afficher
@@ -19,6 +20,10 @@ export class DivEvenementsComponent {
         && (!this.filtre.endDate || (eve.endDate && this.filtre.endDate > eve.endDate))
     );
   }
+
+  // Element ajouté
+  evenementAjoute: model.Evenement | undefined;
+
 
   // Element en cours d'édition
   evenementSelectionne: model.Evenement | undefined;
@@ -58,24 +63,7 @@ export class DivEvenementsComponent {
   // Un constructeur pour se faire injecter les dépendances
   constructor(private dataRepository: DataRepository) { }
 
-  editer(evenement: model.Evenement) {
-    this.evenementSelectionne = evenement;
-  }
-
-  ajouter(): void {
-    this.evenementSelectionne = new model.Evenement();
-    this.evenements.push(this.evenementSelectionne);
-  }
-
-  supprimer(evenement: model.Evenement): void {
-    const index = this.evenements.indexOf(evenement);
-    if (0 <= index && index < this.evenements.length) {
-      this.evenements.splice(index, 1);
-    }
-    this.evenementSelectionne = undefined;
-  }
-
-  changeDate(delta: number) {
+  changerDate(delta: number) {
     if (this.filtre.startDate) {
       const nouvelleDate = new Date();
       nouvelleDate.setTime(this.filtre.startDate.getTime() + (delta * 1000 * 3600 * 24));
@@ -90,6 +78,36 @@ export class DivEvenementsComponent {
       this.filtre.endDate = nouvelleDate;
     }
   }
+
+  creer(): void {
+    this.evenementAjoute = new model.Evenement();
+    this.evenementAjoute.start_date = '//2018 :00:00';
+    this.evenementAjoute.end_date = '//2018 :00:00';
+
+    this.evenementSelectionne = undefined;
+  }
+
+  editer(evenement: model.Evenement) {
+    this.evenementSelectionne = evenement;
+  }
+
+  inserer(): void {
+    if (this.evenementAjoute) {
+      this.dataRepository.getFichierCharge().data.push(this.evenementAjoute);
+    }
+    this.evenementAjoute = undefined;
+  }
+
+  supprimer(evenement: model.Evenement): void {
+    this.evenementSelectionne = undefined;
+
+    const liste = this.dataRepository.getFichierCharge().data;
+    const index = liste.indexOf(evenement);
+    if (0 <= index && index < liste.length) {
+      liste.splice(index, 1);
+    }
+  }
+
 
   private parseDate(chaine: string): Date | undefined {
     if (!chaine || chaine == '') {
@@ -108,23 +126,5 @@ export class DivEvenementsComponent {
     }
 
     return date;
-  }
-
-  private formatDate(date?: Date): string {
-    if (date) {
-      const j = this.formatNumber(date.getDate());
-      const m = this.formatNumber(date.getMonth() + 1);
-      const y = date.getFullYear();
-      return j + '/' + m + '/' + y;
-    } else {
-      return '';
-    }
-  }
-  private formatNumber(n: number): string {
-    if (n < 10) {
-      return '0' + n;
-    } else {
-      return '' + n;
-    }
   }
 }

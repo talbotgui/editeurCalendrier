@@ -16,8 +16,8 @@
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<em class="fa fa-fast-backward" matTooltip="Reculer d'une semaine" (click)="changeDate(-7)"></em>
-			<em class="fa fa-backward" matTooltip="Reculer d'une journée" (click)="changeDate(-1)"></em>
+			<em class="fa fa-fast-backward" matTooltip="Reculer d'une semaine" (click)="changerDate(-7)"></em>
+			<em class="fa fa-backward" matTooltip="Reculer d'une journée" (click)="changerDate(-1)"></em>
 
 			<input [matDatepicker]="datepickerDebut" [(ngModel)]="filtre.startDate" name="dateDebut" placeholder="Date de debut">
 			<mat-datepicker-toggle [for]="datepickerDebut"></mat-datepicker-toggle>
@@ -27,8 +27,8 @@
 			<mat-datepicker-toggle [for]="datepickerFin"></mat-datepicker-toggle>
 			<mat-datepicker #datepickerFin></mat-datepicker>
 
-			<em class="fa fa-forward" matTooltip="Avancer d'une journée" (click)="changeDate(1)"></em>
-			<em class="fa fa-fast-forward" matTooltip="Avancer d'une semaine" (click)="changeDate(7)"></em>
+			<em class="fa fa-forward" matTooltip="Avancer d'une journée" (click)="changerDate(1)"></em>
+			<em class="fa fa-fast-forward" matTooltip="Avancer d'une semaine" (click)="changerDate(7)"></em>
 		</div>
 	</div>
 </div>
@@ -43,11 +43,33 @@
 			<th>Texte</th>
 			<th>Détails</th>
 			<th>
-				<em class="fa fa-plus" matTooltip="Ajouter un évènement" (click)="ajouter()"></em>
+				<em class="fa fa-plus" matTooltip="Ajouter un évènement" (click)="creer()"></em>
 			</th>
 		</tr>
 	</thead>
 	<tbody>
+		<tr *ngIf="evenementAjoute">
+			<td>
+				<input matInput [(ngModel)]="evenementAjoute.start_date" />
+			</td>
+			<td>
+				<input matInput [(ngModel)]="evenementAjoute.end_date" />
+			</td>
+			<td>
+				<mat-select [(ngModel)]="evenementAjoute.type">
+					<mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+				</mat-select>
+			</td>
+			<td>
+				<input matInput [(ngModel)]="evenementAjoute.text" />
+			</td>
+			<td>
+				<input matInput [(ngModel)]="evenementAjoute.details" />
+			</td>
+			<td>
+				<em class="fa fa-check" matTooltip="Insérer l'évènement" (click)="inserer()"></em>
+			</td>
+		</tr>
 		<tr *ngFor="let evenement of evenements; let j = index" (click)="editer(evenement);" [class]="j%2==0 ? 'even' : 'odd'">
 			<td>
 				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.startDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
