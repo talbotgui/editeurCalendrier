@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "preinstall": "package.preinstall.js",
     "ng": "ng",
     "startSurReseau": "ng serve --port=80 --host 0.0.0.0",
     "start": "ng serve",
