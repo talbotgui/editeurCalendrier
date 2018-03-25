@@ -29,6 +29,15 @@ export class SauvegardeService {
 
   sauvegardeParTelechargement(): void {
 
+    // Modification de la date de mise à jour
+    const formatNombre = (n: number): string => { return (n < 10) ? ('0' + n) : '' + n; }
+    const dateCourante = new Date();
+    this.dataRepository.getFichierCharge().data.forEach(e => {
+      if (e.type === 'maj') {
+        e.start_date = formatNombre(dateCourante.getDate()) + '/' + formatNombre(dateCourante.getMonth() + 1) + '/' + dateCourante.getFullYear();
+      }
+    });
+
     // Préparation des données
     const nomDuFichier = "calendrier.json";
     const contenuFichier = JSON.stringify(Object.assign({}, this.dataRepository.getFichierCharge()), null, 2);

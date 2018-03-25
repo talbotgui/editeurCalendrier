@@ -92,27 +92,25 @@
 				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenementSelectionneStartDate" />
 			</td>
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.endDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
-				<input *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" matInput [(ngModel)]="evenementSelectionneEndDate"
-				/>
+				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.endDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
+				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenementSelectionneEndDate" />
 			</td>
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.type}}</span>
-				<mat-select *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" [(ngModel)]="evenement.type">
+				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.type}}</span>
+				<mat-select *ngIf="(evenement == evenementSelectionne)" [(ngModel)]="evenement.type">
 					<mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
 				</mat-select>
 			</td>
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.text}}</span>
-				<input *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" matInput [(ngModel)]="evenement.text" />
+				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.text}}</span>
+				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenement.text" />
 			</td>
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')">{{evenement.details}}</span>
-				<input *ngIf="(evenement == evenementSelectionne && evenement.type != 'maj')" matInput [(ngModel)]="evenement.details" />
+				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.details}}</span>
+				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenement.details" />
 			</td>
 			<td>
-				<em *ngIf="!(evenement == evenementSelectionne && evenement.type != 'maj')" class="fa fa-copy" matTooltip="Editer l'évènement"
-				 (click)="editer(evenement)"></em>
+				<em *ngIf="!(evenement == evenementSelectionne)" class="fa fa-copy" matTooltip="Editer l'évènement" (click)="editer(evenement)"></em>
 				<em *ngIf="evenement.type != 'maj'" class="fa fa-remove" matTooltip="Supprimer l'évènement" (click)="supprimer(evenement)"></em>
 
 				<em *ngIf="evenement.modifie == true" class="fa fa-star" matTooltip="L'évènement a été modifié/créé"></em>

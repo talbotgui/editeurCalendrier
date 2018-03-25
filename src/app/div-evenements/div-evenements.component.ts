@@ -14,7 +14,8 @@ export class DivEvenementsComponent {
   get evenements(): model.Evenement[] {
     return this.dataRepository.getFichierCharge().data
       .filter(
-        eve => (!this.filtre.type || this.filtre.type == eve.type)
+        eve => eve.type !== 'maj'
+          && (!this.filtre.type || this.filtre.type == eve.type)
           && (!this.filtre.text || (eve.text && eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1))
           && (!this.filtre.details || (eve.details && eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1))
           && (!this.filtre.startDate || (eve.startDate && this.filtre.startDate < eve.startDate))
@@ -102,7 +103,6 @@ export class DivEvenementsComponent {
   creer(): void {
     this.evenementAjoute = new model.Evenement();
     this.evenementAjoute.start_date = '//2018 :00:00';
-    this.evenementAjoute.end_date = '//2018 :00:00';
     this.evenementAjoute.modifie = true;
 
     this.evenementSelectionne = undefined;
@@ -115,6 +115,7 @@ export class DivEvenementsComponent {
 
   inserer(): void {
     if (this.evenementAjoute) {
+      this.evenementAjoute.startDate = this.dataRepository.parseDate(this.evenementAjoute.start_date);
       this.dataRepository.getFichierCharge().data.push(this.evenementAjoute);
     }
     this.evenementAjoute = undefined;

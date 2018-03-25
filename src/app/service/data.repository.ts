@@ -29,7 +29,7 @@ export class DataRepository {
     this.fichierCharge = fichier;
   }
 
-  private parseDate(chaine: string): Date | undefined {
+  parseDate(chaine: string): Date | undefined {
     if (!chaine || chaine == '') {
       return undefined;
     }
