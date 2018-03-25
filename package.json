@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "preinstall": "package.preinstall.js",
     "ng": "ng",
     "startSurReseau": "ng serve --port=80 --host 0.0.0.0",
     "start": "ng serve",
@@ -36,7 +37,7 @@
     "zone.js": "0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.8",
+    "@angular/cli": "1.7.3",
     "@angular/compiler-cli": "5.2.4",
     "@angular/language-service": "5.2.4",
     "@types/file-saver": "0.0.1",

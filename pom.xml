@@ -5,7 +5,7 @@
 	<groupId>com.guillaumetalbot</groupId>
 	<artifactId>editeurCalendrier</artifactId>
 	<name>Application Web d'edition de calendrier DHTMLx</name>
-		<version>1.0.0</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -86,27 +86,6 @@
 						<goals><goal>npm</goal></goals>
 						<phase>compile</phase>
 						<configuration><arguments>run build-prod</arguments></configuration>
-					</execution>
-					<!-- Execution des tests (mvn frontend:npm@npmRunTest) -->
-					<execution>
-						<id>npmRunTest</id>
-						<goals><goal>npm</goal></goals>
-						<phase>test</phase>
-						<configuration><arguments>run test-ic</arguments></configuration>
-					</execution>
-					<!-- Execution des tests e2e (mvn frontend:npm@npmRunE2e) -->
-					<execution>
-						<id>npmRunE2e</id>
-						<goals><goal>npm</goal></goals>
-						<phase>integration-test</phase>
-						<configuration><arguments>run e2e-ic</arguments></configuration>
-					</execution>
-					<!-- Execution du tir de qualimetrie (mvn frontend:npm@npmRunQuality) -->
-					<execution>
-						<id>npmRunQuality</id>
-						<goals><goal>npm</goal></goals>
-						<phase>site</phase>
-						<configuration><arguments>run quality</arguments></configuration>
 					</execution>
 				</executions>
 			</plugin>
