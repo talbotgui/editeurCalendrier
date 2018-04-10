@@ -5,39 +5,13 @@ import { DataRepository } from '../service/data.repository';
 import * as model from '../model/model';
 
 @Component({ selector: 'div-evenements', templateUrl: './div-evenements.component.html', styleUrls: ['./div-evenements.component.css'] })
-export class DivEvenementsComponent {
+export class DivEvenementsComponent implements OnInit {
 
   // Champs de filtrage
   filtre: model.Evenement = new model.Evenement();
 
   // Liste à afficher
-  get evenements(): model.Evenement[] {
-    return this.dataRepository.getFichierCharge().data
-      .filter(
-        eve => eve.type !== 'maj'
-          && (!this.filtre.type || this.filtre.type == eve.type)
-          && (!this.filtre.text || (eve.text && eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1))
-          && (!this.filtre.details || (eve.details && eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1))
-          && (!this.filtre.startDate || (eve.startDate && this.filtre.startDate < eve.startDate))
-          && (!this.filtre.endDate || (eve.endDate && this.filtre.endDate > eve.endDate))
-      )
-      .sort((a: model.Evenement, b: model.Evenement): number => {
-        let valeur = -1;
-        if (this.filtreChamp === 'debut' && a.startDate && b.startDate) {
-          valeur = a.startDate.getTime() - b.startDate.getTime();
-        } else if (this.filtreChamp === 'type' && a.type && b.type) {
-          valeur = a.type.localeCompare(b.type);
-        } else if (this.filtreChamp === 'texte' && a.text && b.text) {
-          valeur = a.text.localeCompare(b.text);
-        } else if (this.filtreChamp === 'details' && a.details && b.details) {
-          valeur = a.details.localeCompare(b.details);
-        }
-        if (this.filtreOrdre) {
-          valeur *= -1;
-        }
-        return valeur;
-      });
-  }
+  evenements: model.Evenement[] = [];
 
   // Element ajouté
   evenementAjoute: model.Evenement | undefined;
@@ -48,6 +22,11 @@ export class DivEvenementsComponent {
   // Tri
   filtreChamp: string | undefined;
   filtreOrdre: boolean = false;
+
+  ngOnInit(): void {
+    // raffraichissement de la liste
+    this.listerLesEvenements();
+  }
 
   get evenementSelectionneStartDate(): string {
     if (this.evenementSelectionne) {
@@ -98,6 +77,9 @@ export class DivEvenementsComponent {
       nouvelleDate.setHours(0, 0, 0, 0);
       this.filtre.endDate = nouvelleDate;
     }
+
+    // raffraichissement de la liste
+    this.listerLesEvenements();
   }
 
   creer(): void {
@@ -119,6 +101,36 @@ export class DivEvenementsComponent {
       this.dataRepository.getFichierCharge().data.push(this.evenementAjoute);
     }
     this.evenementAjoute = undefined;
+
+    // raffraichissement de la liste
+    this.listerLesEvenements();
+  }
+
+  listerLesEvenements(): void {
+    const liste = this.dataRepository.getFichierCharge().data.filter(
+      eve => eve.type !== 'maj'
+        && (!this.filtre.type || this.filtre.type == eve.type)
+        && (!this.filtre.text || (eve.text && eve.text.toUpperCase().indexOf(this.filtre.text.toUpperCase()) > -1))
+        && (!this.filtre.details || (eve.details && eve.details.toUpperCase().indexOf(this.filtre.details.toUpperCase()) > -1))
+        && (!this.filtre.startDate || (eve.startDate && this.filtre.startDate <= eve.startDate))
+        && (!this.filtre.endDate || (eve.startDate && eve.startDate <= this.filtre.endDate))
+    ).sort((a: model.Evenement, b: model.Evenement): number => {
+      let valeur = -1;
+      if (this.filtreChamp === 'debut' && a.startDate && b.startDate) {
+        valeur = a.startDate.getTime() - b.startDate.getTime();
+      } else if (this.filtreChamp === 'type' && a.type && b.type) {
+        valeur = a.type.localeCompare(b.type);
+      } else if (this.filtreChamp === 'texte' && a.text && b.text) {
+        valeur = a.text.localeCompare(b.text);
+      } else if (this.filtreChamp === 'details' && a.details && b.details) {
+        valeur = a.details.localeCompare(b.details);
+      }
+      if (this.filtreOrdre) {
+        valeur *= -1;
+      }
+      return valeur;
+    });
+    this.evenements = liste;
   }
 
   supprimer(evenement: model.Evenement): void {
@@ -129,6 +141,9 @@ export class DivEvenementsComponent {
     if (0 <= index && index < liste.length) {
       liste.splice(index, 1);
     }
+
+    // raffraichissement de la liste
+    this.listerLesEvenements();
   }
 
   trier(valeur: string): void {
@@ -138,6 +153,9 @@ export class DivEvenementsComponent {
       this.filtreOrdre = true;
     }
     this.filtreChamp = valeur;
+
+    // raffraichissement de la liste
+    this.listerLesEvenements();
   }
 
   private parseDate(chaine: string): Date | undefined {

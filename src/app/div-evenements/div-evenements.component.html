@@ -3,13 +3,13 @@
 <div class="filtres container-fluid">
 	<div class="row">
 		<div class="col-3">
-			<input matInput [(ngModel)]="filtre.text" placeholder="Texte" />
+			<input matInput [(ngModel)]="filtre.text" placeholder="Texte" (change)="listerLesEvenements()" />
 		</div>
 		<div class="col-3">
-			<input matInput [(ngModel)]="filtre.details" placeholder="Détails" />
+			<input matInput [(ngModel)]="filtre.details" placeholder="Détails" (change)="listerLesEvenements()" />
 		</div>
 		<div class="col-3">
-			<mat-select [(ngModel)]="filtre.type" placeholder="Type d'évènement">
+			<mat-select [(ngModel)]="filtre.type" placeholder="Type d'évènement" (change)="listerLesEvenements()">
 				<mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
 			</mat-select>
 		</div>
@@ -19,11 +19,13 @@
 			<em class="fa fa-fast-backward" matTooltip="Reculer d'une semaine" (click)="changerDate(-7)"></em>
 			<em class="fa fa-backward" matTooltip="Reculer d'une journée" (click)="changerDate(-1)"></em>
 
-			<input [matDatepicker]="datepickerDebut" [(ngModel)]="filtre.startDate" name="dateDebut" placeholder="Date de debut">
+			<input [matDatepicker]="datepickerDebut" [(ngModel)]="filtre.startDate" name="dateDebut" placeholder="Date de debut" (change)="listerLesEvenements()"
+			 (dateChange)="listerLesEvenements()">
 			<mat-datepicker-toggle [for]="datepickerDebut"></mat-datepicker-toggle>
 			<mat-datepicker #datepickerDebut></mat-datepicker>
 
-			<input [matDatepicker]="datepickerFin" [(ngModel)]="filtre.endDate" name="dateFin" placeholder="Date de fin">
+			<input [matDatepicker]="datepickerFin" [(ngModel)]="filtre.endDate" name="dateFin" placeholder="Date de fin" (change)="listerLesEvenements()"
+			 (dateChange)="listerLesEvenements()">
 			<mat-datepicker-toggle [for]="datepickerFin"></mat-datepicker-toggle>
 			<mat-datepicker #datepickerFin></mat-datepicker>
 
