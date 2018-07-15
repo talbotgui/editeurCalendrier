@@ -88,7 +88,7 @@
 				<em class="fa fa-check" matTooltip="Insérer l'évènement" (click)="inserer()"></em>
 			</td>
 		</tr>
-		<tr *ngFor="let evenement of evenements; let j = index" (click)="editer(evenement);" [class]="j%2==0 ? 'even' : 'odd'">
+		<tr *ngFor="let evenement of evenements; let j = index" [class]="j%2==0 ? 'even' : 'odd'">
 			<td>
 				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.startDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
 				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenementSelectionneStartDate" />
@@ -114,6 +114,7 @@
 			<td>
 				<em *ngIf="!(evenement == evenementSelectionne)" class="fa fa-copy" matTooltip="Editer l'évènement" (click)="editer(evenement)"></em>
 				<em *ngIf="evenement.type != 'maj'" class="fa fa-remove" matTooltip="Supprimer l'évènement" (click)="supprimer(evenement)"></em>
+				<em *ngIf="evenement.type != 'maj'" class="fa fa-calendar-plus-o" matTooltip="Dupliquer à J+7" (click)="dupliquerEvenementRecurent(evenement, 7)"></em>
 
 				<em *ngIf="evenement.modifie == true" class="fa fa-star" matTooltip="L'évènement a été modifié/créé"></em>
 			</td>

@@ -29,6 +29,21 @@ export class DataRepository {
     this.fichierCharge = fichier;
   }
 
+  private nombreToString(n: number) {
+    if (n < 10) {
+      return '0' + n;
+    }
+    return '' + n;
+  }
+
+  toDate(date: Date): string {
+    let res = this.nombreToString(date.getDate()) + '/' + this.nombreToString(date.getMonth() + 1) + '/' + date.getFullYear();
+    if (date.getHours && date.getMinutes && date.getSeconds) {
+      res += this.nombreToString(date.getHours()) + ':' + this.nombreToString(date.getMinutes()) + ':' + date.getSeconds();
+    }
+    return res;
+  }
+
   parseDate(chaine: string): Date | undefined {
     if (!chaine || chaine == '') {
       return undefined;

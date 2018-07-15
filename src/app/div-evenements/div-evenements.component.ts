@@ -82,6 +82,35 @@ export class DivEvenementsComponent implements OnInit {
     this.listerLesEvenements();
   }
 
+  dupliquerEvenementRecurent(evenement: model.Evenement, delta: number): void {
+    console.debug(evenement)
+    if (evenement && evenement.startDate) {
+      this.evenementAjoute = new model.Evenement();
+      this.evenementAjoute.details = evenement.details;
+      this.evenementAjoute.text = evenement.text;
+      this.evenementAjoute.type = evenement.type;
+      this.evenementAjoute.modifie = true;
+
+      this.evenementAjoute.startDate = new Date();
+      this.evenementAjoute.startDate.setTime(evenement.startDate.getTime() + (delta * 1000 * 3600 * 24));
+      this.evenementAjoute.start_date = this.dataRepository.toDate(this.evenementAjoute.startDate);
+      if (evenement.endDate) {
+        this.evenementAjoute.endDate = new Date();
+        this.evenementAjoute.endDate.setTime(evenement.endDate.getTime() + (delta * 1000 * 3600 * 24));
+        this.evenementAjoute.end_date = this.dataRepository.toDate(this.evenementAjoute.endDate);
+      }
+
+      console.debug(evenement.start_date + '=>' + this.evenementAjoute.start_date);
+      this.dataRepository.getFichierCharge().data.push(this.evenementAjoute);
+
+      this.evenementSelectionne = this.evenementAjoute;
+      this.evenementAjoute = undefined;
+    }
+
+    // raffraichissement de la liste
+    this.listerLesEvenements();
+  }
+
   creer(): void {
     this.evenementAjoute = new model.Evenement();
     this.evenementAjoute.start_date = '//2018 :00:00';
