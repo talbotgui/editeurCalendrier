@@ -30,12 +30,16 @@ export class SauvegardeService {
   sauvegardeParTelechargement(): void {
 
     // Modification de la date de mise à jour
+    // Et suppression des attributs en trop
     const formatNombre = (n: number): string => { return (n < 10) ? ('0' + n) : '' + n; }
     const dateCourante = new Date();
     this.dataRepository.getFichierCharge().data.forEach(e => {
       if (e.type === 'maj') {
         e.start_date = formatNombre(dateCourante.getDate()) + '/' + formatNombre(dateCourante.getMonth() + 1) + '/' + dateCourante.getFullYear();
       }
+      delete e.modifie;
+      delete e.startDate;
+      delete e.endDate;
     });
 
     // Préparation des données
