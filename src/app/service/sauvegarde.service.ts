@@ -33,7 +33,12 @@ export class SauvegardeService {
     // Et suppression des attributs en trop
     const formatNombre = (n: number): string => { return (n < 10) ? ('0' + n) : '' + n; }
     const dateCourante = new Date();
-    this.dataRepository.getFichierCharge().data.forEach(e => {
+
+    // Clone de la structure avant modification pour sauvegarde
+    const original = this.dataRepository.getFichierCharge()
+    const copie: model.Fichier = JSON.parse(JSON.stringify(original));
+
+    copie.data.forEach(e => {
       if (e.type === 'maj') {
         e.start_date = formatNombre(dateCourante.getDate()) + '/' + formatNombre(dateCourante.getMonth() + 1) + '/' + dateCourante.getFullYear();
       }
@@ -44,7 +49,7 @@ export class SauvegardeService {
 
     // Préparation des données
     const nomDuFichier = "calendrier.json";
-    const contenuFichier = JSON.stringify(Object.assign({}, this.dataRepository.getFichierCharge()), null, 2);
+    const contenuFichier = JSON.stringify(Object.assign({}, copie), null, 2);
     const leBlob = new Blob([contenuFichier], { type: 'text/plain;charset=utf-8' });
     const resultat = { nomFichier: nomDuFichier, blob: leBlob };
 
