@@ -44,14 +44,20 @@ export class DivEvenementsComponent implements OnInit {
   }
   set evenementSelectionneStartDate(value: string) {
     if (this.evenementSelectionne) {
-      this.evenementSelectionne.start_date = value;
-      this.evenementSelectionne.startDate = this.parseDate(value);
+      const laDate = this.parseDate(value);
+      if (laDate) {
+        this.evenementSelectionne.start_date = value;
+        this.evenementSelectionne.startDate = laDate;
+      }
     }
   }
   set evenementSelectionneEndDate(value: string) {
     if (this.evenementSelectionne) {
-      this.evenementSelectionne.end_date = value;
-      this.evenementSelectionne.endDate = this.parseDate(value);
+      const laDate = this.parseDate(value);
+      if (laDate) {
+        this.evenementSelectionne.end_date = value;
+        this.evenementSelectionne.endDate = laDate;
+      }
     }
   }
 
@@ -189,6 +195,10 @@ export class DivEvenementsComponent implements OnInit {
 
   private parseDate(chaine: string): Date | undefined {
     if (!chaine || chaine == '') {
+      return undefined;
+    }
+    const regex = new RegExp("^[0-9]?[0-9]/[0-9]?[0-9]/[0-9][0-9][0-9][0-9] ([0-9]?[0-9]:[0-9]?[0-9]:[0-9]?[0-9])?$");
+    if (!regex.test(chaine)) {
       return undefined;
     }
 

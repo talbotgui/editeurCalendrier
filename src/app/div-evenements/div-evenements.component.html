@@ -90,11 +90,11 @@
 		</tr>
 		<tr *ngFor="let evenement of evenements; let j = index" [class]="j%2==0 ? 'even' : 'odd'">
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.startDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
+				<span>{{evenement.startDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
 				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenementSelectionneStartDate" />
 			</td>
 			<td>
-				<span *ngIf="!(evenement == evenementSelectionne)">{{evenement.endDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
+				<span>{{evenement.endDate | date:'EEEE dd/MM/yyyy HH:mm'}}</span>
 				<input *ngIf="(evenement == evenementSelectionne)" matInput [(ngModel)]="evenementSelectionneEndDate" />
 			</td>
 			<td>
