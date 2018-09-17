@@ -39,7 +39,7 @@ export class DataRepository {
   toDate(date: Date): string {
     let res = this.nombreToString(date.getDate()) + '/' + this.nombreToString(date.getMonth() + 1) + '/' + date.getFullYear();
     if (date.getHours && date.getMinutes && date.getSeconds) {
-      res += this.nombreToString(date.getHours()) + ':' + this.nombreToString(date.getMinutes()) + ':' + date.getSeconds();
+      res += " " + this.nombreToString(date.getHours()) + ':' + this.nombreToString(date.getMinutes()) + ':' + this.nombreToString(date.getSeconds());
     }
     return res;
   }
