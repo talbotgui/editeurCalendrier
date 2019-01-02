@@ -119,7 +119,7 @@ export class DivEvenementsComponent implements OnInit {
 
   creer(): void {
     this.evenementAjoute = new model.Evenement();
-    this.evenementAjoute.start_date = '//2018 :00:00';
+    this.evenementAjoute.start_date = '//2019 :00:00';
     this.evenementAjoute.modifie = true;
 
     this.evenementSelectionne = undefined;
