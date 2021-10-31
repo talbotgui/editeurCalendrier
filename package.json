@@ -8,7 +8,7 @@
     "startSurReseau": "ng serve --port=80 --host 0.0.0.0",
     "start": "ng serve",
     "build": "ng build --locale fr",
-    "build-prod": "ng build --prod --aot --progress=false --verbose=true --build-optimizer",
+    "build-prod": "ng build --prod --aot --progress=false --verbose=true --build-optimizer --output-path=docs/",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
